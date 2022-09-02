@@ -1,0 +1,19 @@
+{
+  "name": "bit-backend",
+  "version": "1.0.0",
+  "description": "Backend project to power stundet management client application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlueeBit/bit-backend.git"
+  },
+  "author": "Elyas Salar & Hedi Muhammad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlueeBit/bit-backend/issues"
+  },
+  "homepage": "https://github.com/BlueeBit/bit-backend#readme"
+}
