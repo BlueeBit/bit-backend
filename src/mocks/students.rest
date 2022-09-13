@@ -1,0 +1,11 @@
+@port = 8080
+@baseUrl = http://localhost:{{port}}/api
+
+GET {{baseUrl}}/v1/students
+content-type: application/json
+
+###
+
+// bad request to non-existing endpoint
+GET {{baseUrl}}/v1/random
+content-type: application/json
