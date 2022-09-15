@@ -12,7 +12,7 @@ export default class StudentController {
         page: Number(page),
         size: Number(size),
       })
-      return new SuccessResponse(undefined, students).send(res)
+      return new SuccessResponse(students).send(res)
     } catch (error) {
       next(new InternalError())
     }
