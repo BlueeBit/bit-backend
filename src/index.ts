@@ -12,5 +12,5 @@ MongoClient.connect(DB_URI, MONGO_OPTIONS)
     server.listen(port)
   })
   .catch((err: MongoNotConnectedError) => {
-    throw new Error(err.message)
+    server.listen(port, () => err)
   })
