@@ -3,7 +3,7 @@
   "name": "bit-backend",
   "builds": [
     {
-      "src": "./index.js",
+      "src": "./build/index.js",
       "use": "@vercel/node"
     }
   ],
