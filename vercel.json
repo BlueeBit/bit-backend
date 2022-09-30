@@ -3,14 +3,14 @@
   "name": "bit-backend",
   "builds": [
     {
-      "src": "/",
+      "src": "/build",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/build"
     }
   ]
 }
