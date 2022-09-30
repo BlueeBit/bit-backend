@@ -4,7 +4,7 @@
   "description": "Backend project to power stundet management client application",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node ./build/index.js",
+    "start": "node ./build/index.js",
     "dev": "nodemon",
     "lint": "eslint ./src --ext .ts",
     "pretty": "prettier --write ./src",
