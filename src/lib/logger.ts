@@ -1,4 +1,4 @@
-import { TransformableInfo } from "../types/logger.d"
+import { TransformableInfo } from "../types/logger"
 
 export const templateFunction = (info: TransformableInfo) => {
   let template = ""

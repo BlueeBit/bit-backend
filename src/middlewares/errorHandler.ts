@@ -2,17 +2,14 @@ import { NextFunction, Request, Response } from "express"
 import logger from "../log/logger"
 import { ApiError, InternalError } from "../config/ApiError"
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const errorHandler = (
   err: Error,
-  _: Request,
+  _res: Request,
   res: Response,
-  __: NextFunction
+  _next: NextFunction
 ) => {
   logger.error("", err)
-  if (err instanceof ApiError) {
-    ApiError.handle(err, res)
-  } else {
-    ApiError.handle(new InternalError(), res)
-  }
+  const error: ApiError = err instanceof ApiError ? err : new InternalError()
+
+  ApiError.handle(error, res)
 }

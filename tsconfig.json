@@ -21,5 +21,9 @@
     "noImplicitThis": false,
     "noUnusedParameters": true,
     "noImplicitOverride": true,
-  }
+    "typeRoots": [
+      "src/types/*",
+      "node_modules/*"
+    ]
+  },
 }
