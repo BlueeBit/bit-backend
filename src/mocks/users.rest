@@ -1,0 +1,44 @@
+@port = 8080
+@baseUrl = http://localhost:{{port}}/api/v1/users
+@accessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVseWFzc2FsYXI4QGdtYWlsLmNvbSIsInRlbmFudElkIjoiZWx5YXNzYWxhcjgiLCJpYXQiOjE2NjU4NTk1NzZ9.ONvw9keMs2CwhQbfNLHxd8elhU4xr9-vO-jTEu9liwE
+@refreshToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVseWFzc2FsYXI4QGdtYWlsLmNvbSIsInRlbmFudElkIjoiZWx5YXNzYWxhcjgiLCJpYXQiOjE2NjU4NTk1Mzl9.Eru8umxG1k4JylmlcI6_fNx_dx_o8ClnmT12dI2f1Ec
+@expiredRefreshToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVseWFzc2FsYXI4QGdtYWlsLmNvbSIsInRlbmFudElkIjoiZWx5YXNzYWxhcjgiLCJpYXQiOjE2NjU4NTI3OTgsImV4cCI6MTY2NTg1Mjc5OH0.XLUyuIFBGeVyPQEsCPTZYrrYmNG2Bd4dC7HYxdzNUTY
+@expiredAccessToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVseWFzc2FsYXI4QGdtYWlsLmNvbSIsInRlbmFudElkIjoiZWx5YXNzYWxhcjgiLCJpYXQiOjE2NjU4NTcwNjAsImV4cCI6MTY2NTg1NzA2MH0.r4amEieETjEM4t4uGaF2vEDH8mnkpesnX_ULlnQowzg
+
+
+POST {{baseUrl}}/register
+content-type: application/json
+
+{
+  "firstName": "Elyas",
+  "middleName": "Salar",
+  "lastName": "Ahmad",
+  "email": "elyassalar8@gmail.com",
+  "password": "Elyas1234564$",
+  "organizationName": "Blue Bit"
+}
+
+
+###
+
+POST {{baseUrl}}/login
+content-type: application/json
+
+{
+  "email": "elyassalar8@gmail.com",
+  "password": "Elyas1234564$"
+}
+
+###
+
+GET {{baseUrl}}/refreshToken
+content-type: application/json
+Cookie: accessToken={{accessToken}}; Path=/; HttpOnly; Secure
+Cookie: refreshToken={{refreshToken}}; Path=/; HttpOnly; Secure
+
+###
+
+DELETE {{baseUrl}}/logout
+content-type: application/json
+Cookie: accessToken={{accessToken}}; Path=/; HttpOnly; Secure
+Cookie: refreshToken={{refreshToken}}; Path=/; HttpOnly; Secure

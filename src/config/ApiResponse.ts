@@ -1,7 +1,7 @@
 import { Response } from "express"
 import { ResponseStatus } from "../constants/ApiResponse"
 
-abstract class ApiResponse {
+export abstract class ApiResponse {
   constructor(
     protected status: ResponseStatus,
     protected message: string | undefined
@@ -86,5 +86,11 @@ export class SuccessResponse<T> extends ApiResponse {
 
   override send(res: Response): Response {
     return super.prepare<SuccessResponse<T>>(res, this)
+  }
+}
+
+export class AccessTokenErrorResponse extends ApiResponse {
+  constructor(message = "Access token invalid", public traceId: string) {
+    super(ResponseStatus.UNAUTHORIZED, message)
   }
 }

@@ -1,15 +1,15 @@
 import { MongoClient } from "mongodb"
 
-let client: MongoClient
-
 export default class StudentDAO {
-  static async injectDB(connection: MongoClient) {
-    if (client instanceof MongoClient) return
+  private static client: MongoClient
 
-    client = connection
+  static async injectDB(connection: MongoClient) {
+    if (this.client instanceof MongoClient) return
+
+    this.client = connection
   }
 
-  static async getPaginatedStudents({ searchQuery = "", page = 0, size = 25 }) {
+  static async getStudents({ searchQuery = "", page = 0, size = 25 }) {
     return { searchQuery, page, size }
   }
 }
